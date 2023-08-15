@@ -1,0 +1,19 @@
+{
+  "name": "clone-tabnews",
+  "version": "1.0.0",
+  "description": "Aprimorando meus conhecimentos com a implementação do https://www.tabnews.com.br feita no https://curso.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
