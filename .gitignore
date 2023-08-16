@@ -2,3 +2,5 @@
 .next
 # pacotes nodes que não precisam ser enviadas para o repositório
 node_modules
+# remove pasta de build
+out/
