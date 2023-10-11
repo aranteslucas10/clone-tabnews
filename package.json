@@ -10,7 +10,11 @@
     "export": "next export",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "compose:up": "docker compose -f infra/compose.yaml up -d",
+    "compose:ps": "docker compose -f infra/compose.yaml ps",
+    "compose:recreate": "docker compose -f infra/compose.yaml up -d --force-recreate",
+    "compose:down": "docker compose -f infra/compose.yaml down"
   },
   "author": "",
   "license": "MIT",
