@@ -65,3 +65,13 @@ npm install react-dom@18.2.0
 npm run build
 npm run export
 ```
+
+## Antes de começar a codar
+
+```bash
+npm run compose:up ou compose:recreate
+npm run dev
+npm run test:watch
+```
+
+> Obs.: Criar um script para inicializar tudo isso ao começar a codar!
