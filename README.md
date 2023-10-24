@@ -69,7 +69,7 @@ npm run export
 ## Antes de começar a codar
 
 ```bash
-npm run compose:up ou compose:recreate
+npm run compose:local:up ou compose:local:recreate
 npm run dev
 npm run test:watch
 ```
