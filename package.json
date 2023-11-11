@@ -11,10 +11,10 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test:watch": "jest --watchAll",
-    "compose:local:up": "docker compose -f infra/compose.yaml --env-file .env.local up -d",
-    "compose:local:ps": "docker compose -f infra/compose.yaml --env-file .env.local ps",
-    "compose:local:recreate": "docker compose -f infra/compose.yaml --env-file .env.local up -d --force-recreate",
-    "compose:local:down": "docker compose -f infra/compose.yaml --env-file .env.local down"
+    "compose:local:up": "docker compose -f infra/compose.yaml --env-file .env.development up -d",
+    "compose:local:ps": "docker compose -f infra/compose.yaml --env-file .env.development ps",
+    "compose:local:recreate": "docker compose -f infra/compose.yaml --env-file .env.development up -d --force-recreate",
+    "compose:local:down": "docker compose -f infra/compose.yaml --env-file .env.development down"
   },
   "author": "",
   "license": "MIT",
