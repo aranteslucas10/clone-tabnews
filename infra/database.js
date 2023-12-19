@@ -9,9 +9,14 @@ async function query(queryObject) {
     database: process.env.POSTGRES_DATABASE,
   });
   await client.connect();
-  const result = await client.query(queryObject);
-  await client.end();
-  return result;
+  try {
+    const result = await client.query(queryObject);
+    return result;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    await client.end();
+  }
 }
 
 async function getDatabaseVersion() {
@@ -31,9 +36,11 @@ async function getMaxConnections() {
 }
 
 async function getUsedConnections() {
-  const databaseUsedConnectionsQueryResult = await query(
-    "SELECT COUNT(*)::int AS opened_connections FROM pg_stat_activity WHERE datname = 'local_database';",
-  );
+  const databaseName = process.env.POSTGRES_DATABASE;
+  const databaseUsedConnectionsQueryResult = await query({
+    text: "SELECT COUNT(*)::int AS opened_connections FROM pg_stat_activity WHERE datname = $1;",
+    values: [databaseName],
+  });
   return databaseUsedConnectionsQueryResult.rows[0].opened_connections;
 }
 
