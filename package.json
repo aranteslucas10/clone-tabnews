@@ -4,13 +4,13 @@
   "description": "Aprimorando meus conhecimentos com a implementação do https://www.tabnews.com.br feita no https://curso.dev",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --watchAll --runInBand",
     "compose:local:up": "docker compose -f infra/compose.yaml --env-file .env.development up -d",
     "compose:local:ps": "docker compose -f infra/compose.yaml --env-file .env.development ps",
     "compose:local:recreate": "docker compose -f infra/compose.yaml --env-file .env.development up -d --force-recreate",
@@ -22,6 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.4",
+    "dotenv-expand": "^11.0.6",
     "next": "^13.1.6",
     "node-pg-migrate": "^6.2.2",
     "pg": "^8.11.3",
