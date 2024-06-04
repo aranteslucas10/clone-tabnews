@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
-    "dev": "next dev",
+    "dev": "npm run compose:local:up && npm run wait-for-postgres && npm run migration:up && next dev",
     "build": "next build",
     "export": "next export",
     "lint:check": "prettier --check .",
@@ -16,7 +16,8 @@
     "compose:local:recreate": "docker compose -f infra/compose.yaml --env-file .env.development up -d --force-recreate",
     "compose:local:down": "docker compose -f infra/compose.yaml --env-file .env.development down",
     "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
-    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up"
+    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up",
+    "wait-for-postgres": "node infra/scripts/wait-for-postgres.js"
   },
   "author": "",
   "license": "MIT",
