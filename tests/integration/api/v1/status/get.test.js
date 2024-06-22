@@ -1,6 +1,10 @@
+import orchestrator  from "tests/orchestrator";
+
 var response;
 
 beforeAll(async () => {
+  await orchestrator.waitForAllService();
+
   response = await fetch("http://localhost:3000/api/v1/status");
 });
 
