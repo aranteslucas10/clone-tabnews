@@ -7,7 +7,7 @@ async function cleanDatabase() {
 
 beforeAll(async () => {
   await orchestrator.waitForAllService();
-  await cleanDatabase()
+  await cleanDatabase();
 });
 
 test("GET to /api/v1/migrations should return 200", async () => {

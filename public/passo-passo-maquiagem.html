@@ -1,243 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Passo a Passo de Maquiagem</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
 
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            margin: 0 auto;
-            position: relative;
-            max-width: 800px;
-            /* Tamanho fixo do carrossel */
-        }
+      .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+        max-width: 800px;
+        /* Tamanho fixo do carrossel */
+      }
 
-        .carousel {
-            display: flex;
-            gap: 20px;
-            padding: 20px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-        }
+      .carousel {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+      }
 
-        .carousel::-webkit-scrollbar {
-            display: none;
-        }
+      .carousel::-webkit-scrollbar {
+        display: none;
+      }
 
-        .card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            flex: none;
-            width: 300px;
-            scroll-snap-align: start;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
-        }
+      .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex: none;
+        width: 300px;
+        scroll-snap-align: start;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+      }
 
-        .card strong {
-            display: block;
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 10px;
-        }
+      .card strong {
+        display: block;
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 10px;
+      }
 
-        .card p {
-            color: #666;
-        }
+      .card p {
+        color: #666;
+      }
 
-        .card .number {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #333;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1em;
-        }
+      .card .number {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #333;
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1em;
+      }
 
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            margin-top: 10px;
-        }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
 
-        .checkbox-container input {
-            margin-right: 10px;
-        }
+      .checkbox-container input {
+        margin-right: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Passo a Passo de Maquiagem</h1>
     <div class="carousel-container">
-        <div class="carousel">
-            <div class="card">
-                <div class="number">1</div>
-                <strong>Higienizar</strong>
-                <p>Produto: Água Micelar</p>
-                <!-- <div class="checkbox-container">
+      <div class="carousel">
+        <div class="card">
+          <div class="number">1</div>
+          <strong>Higienizar</strong>
+          <p>Produto: Água Micelar</p>
+          <!-- <div class="checkbox-container">
                     <input type="checkbox" id="step1">
                     <label for="step1">Concluído</label>
                 </div> -->
-            </div>
-            <div class="card">
-                <div class="number">2</div>
-                <strong>Hidratar</strong>
-                <p>Produto: Bruma Hidro & Fix</p>
-            </div>
-            <div class="card">
-                <div class="number">3</div>
-                <strong>Estimular o Crescimento das Sobrancelhas</strong>
-                <p>Produto: Sérum Plus</p>
-            </div>
-            <div class="card">
-                <div class="number">4</div>
-                <strong>Hidratar</strong>
-                <p>Produto: Sérum C10/Vitamina C, Sérum Protect & Control</p>
-            </div>
-            <div class="card">
-                <div class="number">5</div>
-                <strong>Minimizar os Poros e Linhas Finas</strong>
-                <p>Produto: Primer Facial - But First</p>
-            </div>
-            <div class="card">
-                <div class="number">6</div>
-                <strong>Camuflar Manchas</strong>
-                <p>Produto: Glam Creamy Concealer, Corretivo Líquido Glam</p>
-            </div>
-            <div class="card">
-                <div class="number">7</div>
-                <strong>Uniformizar o Tom da Pele</strong>
-                <p>Produto: Base Iluminous</p>
-            </div>
-            <div class="card">
-                <div class="number">8</div>
-                <strong>Selar a Pele</strong>
-                <p>Produto: Pó Translúcido, Pó Compacto</p>
-            </div>
-            <div class="card">
-                <div class="number">9</div>
-                <strong>Devolver a Sombra do Rosto</strong>
-                <p>Produto: Trio Fabulous</p>
-            </div>
-            <div class="card">
-                <div class="number">10</div>
-                <strong>Devolver o Aspecto Saudável da Pele</strong>
-                <p>Produto: Trio Fabulous, Paleta My Crush</p>
-            </div>
-            <div class="card">
-                <div class="number">11</div>
-                <strong>Iluminar os Pontos Altos</strong>
-                <p>Produto: Trio Fabulous, Paleta My Crush</p>
-            </div>
-            <div class="card">
-                <div class="number">12</div>
-                <strong>Fixar e Tirar o Aspecto de Pó da Pele</strong>
-                <p>Produto: Bruma Hidro & Fix</p>
-            </div>
-            <div class="card">
-                <div class="number">13</div>
-                <strong>Preencher a Sobrancelha</strong>
-                <p>Produto: Duo, Brow Shape, Gel de Sobrancelhas, Wonder Brow, 3D Brow</p>
-            </div>
-            <div class="card">
-                <div class="number">14</div>
-                <strong>Definir a Sobrancelha</strong>
-                <p>Produto: Perfect</p>
-            </div>
-            <div class="card">
-                <div class="number">15</div>
-                <strong>Aplicar Sombra</strong>
-                <p>Produto: Paleta Six Shades, Paleta Quad Shadow</p>
-            </div>
-            <div class="card">
-                <div class="number">16</div>
-                <strong>Marcar a Raiz dos Cílios</strong>
-                <p>Produto: Lápis Black Extreme, Lápis Brow Extreme</p>
-            </div>
-            <div class="card">
-                <div class="number">17</div>
-                <strong>Delinear</strong>
-                <p>Produto: Caneta Delineadora Supreme Stay</p>
-            </div>
-            <div class="card">
-                <div class="number">18</div>
-                <strong>Dar Volume aos Cílios</strong>
-                <p>Produto: Máscara de Cílios Bigger</p>
-            </div>
-            <div class="card">
-                <div class="number">19</div>
-                <strong>Alinhar as Sobrancelhas</strong>
-                <p>Produto: Fixing em Gel</p>
-            </div>
-            <div class="card">
-                <div class="number">20</div>
-                <strong>Hidratar os Lábios</strong>
-                <p>Produto: Lip Balm</p>
-            </div>
-            <div class="card">
-                <div class="number">21</div>
-                <strong>Contornar os Lábios</strong>
-                <p>Produto: Lápis Para os Lábios - Lip Pencil</p>
-            </div>
-            <div class="card">
-                <div class="number">22</div>
-                <strong>Aplicar Batom</strong>
-                <p>Produto: Batom Líquido Matte, Gloss</p>
-            </div>
         </div>
+        <div class="card">
+          <div class="number">2</div>
+          <strong>Hidratar</strong>
+          <p>Produto: Bruma Hidro & Fix</p>
+        </div>
+        <div class="card">
+          <div class="number">3</div>
+          <strong>Estimular o Crescimento das Sobrancelhas</strong>
+          <p>Produto: Sérum Plus</p>
+        </div>
+        <div class="card">
+          <div class="number">4</div>
+          <strong>Hidratar</strong>
+          <p>Produto: Sérum C10/Vitamina C, Sérum Protect & Control</p>
+        </div>
+        <div class="card">
+          <div class="number">5</div>
+          <strong>Minimizar os Poros e Linhas Finas</strong>
+          <p>Produto: Primer Facial - But First</p>
+        </div>
+        <div class="card">
+          <div class="number">6</div>
+          <strong>Camuflar Manchas</strong>
+          <p>Produto: Glam Creamy Concealer, Corretivo Líquido Glam</p>
+        </div>
+        <div class="card">
+          <div class="number">7</div>
+          <strong>Uniformizar o Tom da Pele</strong>
+          <p>Produto: Base Iluminous</p>
+        </div>
+        <div class="card">
+          <div class="number">8</div>
+          <strong>Selar a Pele</strong>
+          <p>Produto: Pó Translúcido, Pó Compacto</p>
+        </div>
+        <div class="card">
+          <div class="number">9</div>
+          <strong>Devolver a Sombra do Rosto</strong>
+          <p>Produto: Trio Fabulous</p>
+        </div>
+        <div class="card">
+          <div class="number">10</div>
+          <strong>Devolver o Aspecto Saudável da Pele</strong>
+          <p>Produto: Trio Fabulous, Paleta My Crush</p>
+        </div>
+        <div class="card">
+          <div class="number">11</div>
+          <strong>Iluminar os Pontos Altos</strong>
+          <p>Produto: Trio Fabulous, Paleta My Crush</p>
+        </div>
+        <div class="card">
+          <div class="number">12</div>
+          <strong>Fixar e Tirar o Aspecto de Pó da Pele</strong>
+          <p>Produto: Bruma Hidro & Fix</p>
+        </div>
+        <div class="card">
+          <div class="number">13</div>
+          <strong>Preencher a Sobrancelha</strong>
+          <p>
+            Produto: Duo, Brow Shape, Gel de Sobrancelhas, Wonder Brow, 3D Brow
+          </p>
+        </div>
+        <div class="card">
+          <div class="number">14</div>
+          <strong>Definir a Sobrancelha</strong>
+          <p>Produto: Perfect</p>
+        </div>
+        <div class="card">
+          <div class="number">15</div>
+          <strong>Aplicar Sombra</strong>
+          <p>Produto: Paleta Six Shades, Paleta Quad Shadow</p>
+        </div>
+        <div class="card">
+          <div class="number">16</div>
+          <strong>Marcar a Raiz dos Cílios</strong>
+          <p>Produto: Lápis Black Extreme, Lápis Brow Extreme</p>
+        </div>
+        <div class="card">
+          <div class="number">17</div>
+          <strong>Delinear</strong>
+          <p>Produto: Caneta Delineadora Supreme Stay</p>
+        </div>
+        <div class="card">
+          <div class="number">18</div>
+          <strong>Dar Volume aos Cílios</strong>
+          <p>Produto: Máscara de Cílios Bigger</p>
+        </div>
+        <div class="card">
+          <div class="number">19</div>
+          <strong>Alinhar as Sobrancelhas</strong>
+          <p>Produto: Fixing em Gel</p>
+        </div>
+        <div class="card">
+          <div class="number">20</div>
+          <strong>Hidratar os Lábios</strong>
+          <p>Produto: Lip Balm</p>
+        </div>
+        <div class="card">
+          <div class="number">21</div>
+          <strong>Contornar os Lábios</strong>
+          <p>Produto: Lápis Para os Lábios - Lip Pencil</p>
+        </div>
+        <div class="card">
+          <div class="number">22</div>
+          <strong>Aplicar Batom</strong>
+          <p>Produto: Batom Líquido Matte, Gloss</p>
+        </div>
+      </div>
     </div>
     <script>
-        const carousel = document.querySelector('.carousel');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+      const carousel = document.querySelector(".carousel");
+      let isDown = false;
+      let startX;
+      let scrollLeft;
 
-        carousel.addEventListener('mousedown', (e) => {
-            isDown = true;
-            carousel.classList.add('active');
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
-        });
-        carousel.addEventListener('mouseleave', () => {
-            isDown = false;
-            carousel.classList.remove('active');
-        });
-        carousel.addEventListener('mouseup', () => {
-            isDown = false;
-            carousel.classList.remove('active');
-        });
-        carousel.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2; //scroll-fast
-            carousel.scrollLeft = scrollLeft - walk;
-        });
+      carousel.addEventListener("mousedown", (e) => {
+        isDown = true;
+        carousel.classList.add("active");
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      carousel.addEventListener("mouseleave", () => {
+        isDown = false;
+        carousel.classList.remove("active");
+      });
+      carousel.addEventListener("mouseup", () => {
+        isDown = false;
+        carousel.classList.remove("active");
+      });
+      carousel.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2; //scroll-fast
+        carousel.scrollLeft = scrollLeft - walk;
+      });
     </script>
-</body>
-
+  </body>
 </html>
