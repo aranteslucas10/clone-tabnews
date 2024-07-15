@@ -53,7 +53,6 @@ async function getUsedConnections() {
   return databaseUsedConnectionsQueryResult.rows[0].opened_connections;
 }
 
-
 const database = {
   query,
   getDatabaseVersion,
