@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 function Home() {
   return (
     <div
@@ -11,12 +13,16 @@ function Home() {
     >
       <div style={{ padding: "100px" }}>
         <div style={{ fontSize: "24px", color: "#333", marginBottom: "20px" }}>
-          "Se você quiser fazer uma torta de maçã a partir do zero, você deve
-          primeiro inventar o Universo."
+          &quot;Se você quiser fazer uma torta de maçã a partir do zero, você
+          deve primeiro inventar o Universo.&quot;
         </div>
         <div style={{ fontSize: "18px", color: "#777" }}>- Carl Sagan</div>
       </div>
-      <img src="./apple-81.gif" style={{ maxWidth: "25%", heigth: "auto" }} />
+      <Image
+        src="./apple-81.gif"
+        alt="maçanzinha"
+        style={{ maxWidth: "25%", heigth: "auto" }}
+      />
     </div>
   );
 }
