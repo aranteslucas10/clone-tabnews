@@ -53,13 +53,16 @@ async function getUsedConnections() {
   return databaseUsedConnectionsQueryResult.rows[0].opened_connections;
 }
 
-export default {
+
+const database = {
   query,
   getDatabaseVersion,
   getMaxConnections,
   getUsedConnections,
   getNewClient,
 };
+
+export default database;
 
 function getSSLValues() {
   if (process.env.POSTGRES_CA) {
