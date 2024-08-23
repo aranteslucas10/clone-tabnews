@@ -1,4 +1,5 @@
 import Image from "next/image";
+import macanzinho from "public/apple-81.gif";
 
 function Home() {
   return (
@@ -19,8 +20,10 @@ function Home() {
         <div style={{ fontSize: "18px", color: "#777" }}>- Carl Sagan</div>
       </div>
       <Image
-        src="./apple-81.gif"
+        src={macanzinho}
         alt="maçanzinha"
+        width={250}
+        height={250}
         style={{ maxWidth: "25%", heigth: "auto" }}
       />
     </div>
