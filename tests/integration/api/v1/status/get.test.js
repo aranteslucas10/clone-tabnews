@@ -33,14 +33,24 @@ describe("GET /api/v1/migrations", () => {
       });
 
       test("Verify value of key 'MaxConnections'", () => {
-        expect(responseBody.dependencies.database.max_connections).toBeDefined();
-        expect(typeof responseBody.dependencies.database.max_connections).toBe("number",);
-        expect(responseBody.dependencies.database.max_connections >= 0).toBe(true);
+        expect(
+          responseBody.dependencies.database.max_connections,
+        ).toBeDefined();
+        expect(typeof responseBody.dependencies.database.max_connections).toBe(
+          "number",
+        );
+        expect(responseBody.dependencies.database.max_connections >= 0).toBe(
+          true,
+        );
       });
 
       test("Verify value of key 'OpenedConnections'", () => {
-        expect(responseBody.dependencies.database.opened_connections).toBeDefined();
-        expect(typeof responseBody.dependencies.database.opened_connections).toBe("number",);
+        expect(
+          responseBody.dependencies.database.opened_connections,
+        ).toBeDefined();
+        expect(
+          typeof responseBody.dependencies.database.opened_connections,
+        ).toBe("number");
         expect(responseBody.dependencies.database.opened_connections).toBe(1);
       });
     });

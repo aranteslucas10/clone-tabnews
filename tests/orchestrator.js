@@ -1,3 +1,4 @@
+import database from "infra/database";
 import retry from "async-retry";
 
 async function waitForAllService() {
@@ -18,8 +19,18 @@ async function waitForAllService() {
   }
 }
 
+async function clearDatabase() {
+  await database.query("drop schema public cascade; create schema public;");
+}
+
+async function getNumberOfMigrationOnDatabase() {
+  return await database.query("SELECT COUNT(*) FROM pgmigrations;");
+}
+
 const orchestrator = {
   waitForAllService,
+  clearDatabase,
+  getNumberOfMigrationOnDatabase,
 };
 
 export default orchestrator;
