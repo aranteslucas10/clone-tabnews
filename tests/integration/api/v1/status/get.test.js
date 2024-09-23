@@ -12,37 +12,47 @@ test("GET to /api/v1/status should return 200", async () => {
   expect(response.status).toBe(200);
 });
 
-describe("Verify Status Response Content", () => {
-  var responseBody;
+describe("GET /api/v1/migrations", () => {
+  describe("Anonymous user", () => {
+    describe("Retrieving current system status", () => {
+      var responseBody;
 
-  beforeAll(async () => {
-    responseBody = await response.json();
-  });
+      beforeAll(async () => {
+        responseBody = await response.json();
+      });
 
-  test("Verify UpdateAt Key/Value", () => {
-    expect(responseBody.updated_at).toBeDefined();
-    const updateAt = new Date(responseBody.updated_at).toISOString();
-    expect(responseBody.updated_at).toBe(updateAt);
-  });
+      test("Verify value of key 'UpdateAt'", () => {
+        expect(responseBody.updated_at).toBeDefined();
+        const updateAt = new Date(responseBody.updated_at).toISOString();
+        expect(responseBody.updated_at).toBe(updateAt);
+      });
 
-  test("Verify Database Key/Value", () => {
-    expect(responseBody.dependencies.database.version).toBeDefined();
-    expect(responseBody.dependencies.database.version).toBe("16.0");
-  });
+      test("Verify value of key 'Database'", () => {
+        expect(responseBody.dependencies.database.version).toBeDefined();
+        expect(responseBody.dependencies.database.version).toBe("16.0");
+      });
 
-  test("Verify MaxConnections Key/Value", () => {
-    expect(responseBody.dependencies.database.max_connections).toBeDefined();
-    expect(typeof responseBody.dependencies.database.max_connections).toBe(
-      "number",
-    );
-    expect(responseBody.dependencies.database.max_connections >= 0).toBe(true);
-  });
+      test("Verify value of key 'MaxConnections'", () => {
+        expect(
+          responseBody.dependencies.database.max_connections,
+        ).toBeDefined();
+        expect(typeof responseBody.dependencies.database.max_connections).toBe(
+          "number",
+        );
+        expect(responseBody.dependencies.database.max_connections >= 0).toBe(
+          true,
+        );
+      });
 
-  test("Verify OpenedConnections Key/Value", () => {
-    expect(responseBody.dependencies.database.opened_connections).toBeDefined();
-    expect(typeof responseBody.dependencies.database.opened_connections).toBe(
-      "number",
-    );
-    expect(responseBody.dependencies.database.opened_connections).toBe(1);
+      test("Verify value of key 'OpenedConnections'", () => {
+        expect(
+          responseBody.dependencies.database.opened_connections,
+        ).toBeDefined();
+        expect(
+          typeof responseBody.dependencies.database.opened_connections,
+        ).toBe("number");
+        expect(responseBody.dependencies.database.opened_connections).toBe(1);
+      });
+    });
   });
 });
