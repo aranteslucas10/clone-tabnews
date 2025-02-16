@@ -25,8 +25,8 @@ async function getHandler(request, response) {
   try {
     dbClient = await database.getNewClient();
     const pendingMigrations = await migrationRunner({
-      ...defaultMigrations, 
-      dbClient
+      ...defaultMigrations,
+      dbClient,
     });
     return response.status(200).json(pendingMigrations);
   } finally {
@@ -42,7 +42,7 @@ async function postHandler(request, response) {
     const migratedMigrations = await migrationRunner({
       ...defaultMigrations,
       dryRun: false,
-      dbClient
+      dbClient,
     });
     if (migratedMigrations.length > 0) {
       return response.status(201).json(migratedMigrations);
