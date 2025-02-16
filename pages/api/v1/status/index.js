@@ -1,29 +1,23 @@
+import { createRouter } from "next-connect";
 import database from "infra/database.js";
-import { InternalServerError } from "infra/errors";
+import controller from "infra/controller.js";
 
-async function status(request, response) {
-  try {
-    const updatedAt = new Date().toISOString();
-    response.status(200).json({
-      updated_at: updatedAt,
-      dependencies: {
-        database: {
-          version: await database.getDatabaseVersion(),
-          max_connections: await database.getMaxConnections(),
-          opened_connections: await database.getUsedConnections(),
-        },
+const router = createRouter();
+
+router.get(getHandler);
+
+export default router.handler(controller.errorHandlers);
+
+async function getHandler(request, response) {
+  const updatedAt = new Date().toISOString();
+  response.status(200).json({
+    updated_at: updatedAt,
+    dependencies: {
+      database: {
+        version: await database.getDatabaseVersion(),
+        max_connections: await database.getMaxConnections(),
+        opened_connections: await database.getUsedConnections(),
       },
-    });
-  } catch (error) {
-    const publicErrorObject = new InternalServerError({
-      cause: error,
-    });
-
-    console.log("\n Erro dentro do catch do controller:");
-    console.error(publicErrorObject);
-
-    response.status(500).json(publicErrorObject);
-  }
+    },
+  });
 }
-
-export default status;
