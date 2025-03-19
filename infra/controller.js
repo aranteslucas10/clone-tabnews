@@ -2,7 +2,7 @@ import { InternalServerError, MethodNotAllowedError } from "infra/errors";
 
 function onNoMatchHandler(request, response) {
   const publicErrorObject = new MethodNotAllowedError();
-  response.status(publicErrorObject.status_code).json(publicErrorObject);
+  response.status(publicErrorObject.statusCode).json(publicErrorObject);
 }
 
 function onErrorHandler(error, request, response) {
