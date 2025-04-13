@@ -26,20 +26,20 @@ exports.up = (pgm) => {
     password: {
       type: "varchar(72)",
       notNull: true,
-      notEmpty: true
+      notEmpty: true,
     },
 
     created_at: {
       type: "timestamptz",
       notNull: true,
-      default: pgm.func("timezone('UTC', now())")
+      default: pgm.func("timezone('UTC', now())"),
     },
 
     updated_at: {
       type: "timestamptz",
       notNull: true,
       default: pgm.func("timezone('UTC', now())"),
-    }
+    },
   });
 };
 
